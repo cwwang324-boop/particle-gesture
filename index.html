@@ -141,7 +141,7 @@
   <label>形状切换</label>
   <select id="shape-select">
     <option value="flow">🌊 散开流动</option>
-    <option value="heart">🔥 你真牛逼</option>
+    <option value="heart">❤️ 爱心</option>
     <option value="text">✨ 王雪楠</option>
   </select>
   <label>粒子颜色</label>
@@ -164,7 +164,7 @@
 </div>
 
 <div id="hints">
-  <span><span class="emoji">✊</span>握拳 → 你真牛逼</span>
+  <span><span class="emoji">✊</span>握拳 → 爱心</span>
   <span><span class="emoji">🖐</span>张开 → 散开</span>
   <span><span class="emoji">✌️</span>比耶 → 王雪楠</span>
 </div>
@@ -413,7 +413,7 @@ function generateShapePoints(shape, count) {
   let pts;
   switch (shape) {
     case SHAPES.FLOW: pts = generateFlowPoints(count); break;
-    case SHAPES.HEART: pts = generateTextPoints('你真牛逼', count); break;
+    case SHAPES.HEART: pts = generateHeartPoints(count); break;
     case SHAPES.TEXT: pts = generateTextPoints('王雪楠', count); break;
     default: pts = generateFlowPoints(count);
   }
@@ -448,7 +448,7 @@ function setShape(shape) {
 function updateShapeLabel(shape) {
   switch (shape) {
     case SHAPES.FLOW: gestureLabel.textContent = '🌊 散开流动'; break;
-    case SHAPES.HEART: gestureLabel.textContent = '🔥 你真牛逼'; break;
+    case SHAPES.HEART: gestureLabel.textContent = '❤️ 爱心'; break;
     case SHAPES.TEXT: gestureLabel.textContent = '✨ 王雪楠'; break;
   }
   // Highlight active badge
